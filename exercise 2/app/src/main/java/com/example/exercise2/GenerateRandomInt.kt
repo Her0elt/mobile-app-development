@@ -10,13 +10,17 @@ class GenerateRandomInt : Activity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_generate_random_int)
         upperBound = intent.getIntExtra("upperBound", upperBound)
 
     }
 
     fun generateRandomInt(v: View?) {
-        upperBound = (0..upperBound).random()
-        setResult(RESULT_OK, Intent().putExtra("upperBound", upperBound))
+        val intent = Intent()
+        for (i in 0..10) {
+            intent.putExtra("randomInt1$i", (0..upperBound).random())
+        }
+        setResult(RESULT_OK, intent)
         finish()
     }
 }

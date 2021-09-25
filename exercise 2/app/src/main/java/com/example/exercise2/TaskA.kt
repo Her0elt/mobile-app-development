@@ -14,7 +14,7 @@ class TaskA : AppCompatActivity() {
             when (result.resultCode) {
                 RESULT_OK-> {
                     if(result.data != null){
-                        val generatedNumber = result.data!!.getIntExtra("randomNumber1", 5)
+                        val generatedNumber = result.data!!.getIntExtra("randomInt1", 5)
                         Toast.makeText(this, "Generert tall: $generatedNumber", Toast.LENGTH_LONG)
                             .show()
                         val textView = findViewById<View>(R.id.task_a_textview) as TextView
